@@ -42,8 +42,8 @@ if __name__ == "__main__":
             clocktime = strftime('%H:%M:%S',localtime())
             time_display = "Updated " + clocktime
             ip_display =  socket.gethostbyname(socket.gethostname())
-            mylcd.update_buffer(time_display,1,1)
-            mylcd.update_buffer(ip_display,2,1)
+            mylcd.update_buffer(time_display,1,0)
+            mylcd.update_buffer(ip_display,2,0)
             sleep(60) 
     except KeyboardInterrupt:
         print('Ending the program')
