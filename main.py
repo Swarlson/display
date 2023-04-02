@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from time import sleep, strftime, localtime
 from I2C_LCD_driver import lcd
-import socket
+import urllib.request
 
 #Todo: Mach active/testing main methods damit du nicht ständig den ganzen shit rauskommentieren musst
 #Todo: Do binance implementation (maybe other project for this) calls etc zu simulieren und zu schauen wie es läuft
@@ -41,7 +41,7 @@ if __name__ == "__main__":
         while True:
             clocktime = strftime('%H:%M:%S',localtime())
             time_display = "Updated " + clocktime
-            ip_display =  socket.gethostbyname(socket.gethostname())
+            ip_display = urllib.request.urlopen('https://ident.me').read().decode('utf8')
             mylcd.update_buffer(time_display,1,0)
             mylcd.update_buffer(ip_display,2,0)
             sleep(60) 
