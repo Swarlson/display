@@ -41,7 +41,7 @@ if __name__ == "__main__":
         while True:
             clocktime = strftime('%H:%M:%S',localtime())
             time_display = "Updated " + clocktime
-            ip_display = urllib.request.urlopen('https://ident.me').read().decode('utf8')
+            ip_display = urllib.request.urlopen('https://v4.ident.me').read().decode('utf8')
             mylcd.update_buffer(time_display,1,0)
             mylcd.update_buffer(ip_display,2,0)
             sleep(60) 
